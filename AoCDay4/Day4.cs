@@ -21,7 +21,6 @@ namespace AoCDay4
 
             Console.WriteLine(p1Valid);
             Console.ReadKey();
-
         }
 
         public static bool CheckValid(string number)
