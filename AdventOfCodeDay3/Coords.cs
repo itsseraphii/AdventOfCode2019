@@ -64,21 +64,21 @@ namespace AdventOfCodeDay3
             Path path = new Path();
             path.StartCoord = new Coords(this);
             path.Direction = instruction.First();
-            int distance = int.Parse(instruction.Substring(1));
+            path.Distance = int.Parse(instruction.Substring(1));
 
             switch (path.Direction)
             {
                 case 'L':
-                    destinationCoords.X = this.X - distance;
+                    destinationCoords.X = this.X - path.Distance;
                     break;
                 case 'R':
-                    destinationCoords.X = this.X + distance;
+                    destinationCoords.X = this.X + path.Distance;
                     break;
                 case 'U':
-                    destinationCoords.Y = this.Y + distance;
+                    destinationCoords.Y = this.Y + path.Distance;
                     break;
                 case 'D':
-                    destinationCoords.Y = this.Y - distance;
+                    destinationCoords.Y = this.Y - path.Distance;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("The direction that was entered is invalid.");

@@ -65,7 +65,7 @@ namespace AdventOfCodeDay3
 
         public Coords GetIntersection(Path otherPath)
         {
-            Coords coords = null;
+            Coords coords = new Coords();
 
             switch (this.Direction)
             {

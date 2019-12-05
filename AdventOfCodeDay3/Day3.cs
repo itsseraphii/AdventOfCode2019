@@ -63,7 +63,7 @@ namespace AdventOfCodeDay3
             Console.WriteLine("Manhattan closest distance = " + closestDistance);
             Console.WriteLine(closest);
 
-            int smallestSteps = 999999999;
+            int smallestSteps = int.MaxValue;
 
             foreach (Path[] pathColision in pathColisions)
             {
@@ -74,17 +74,17 @@ namespace AdventOfCodeDay3
                 wire2Coord = new Coords();
                 do
                 {
+                    totSteps1 += Math.Abs(iWirePath1.Distance);
                     iWire1++;
                     iWirePath1 = wire1Coord.Movement(wire1Data[iWire1]);
-                    totSteps1 = Math.Abs(iWirePath1.Distance);
                 }
                 while (iWirePath1 != pathColision[0]);
 
                 do
                 {
+                    totSteps2 += Math.Abs(iWirePath2.Distance);
                     iWire2++;
                     iWirePath2 = wire2Coord.Movement(wire2Data[iWire2]);
-                    totSteps2 = Math.Abs(iWirePath2.Distance);
                 }
                 while (iWirePath2 != pathColision[1]);
 
@@ -92,7 +92,7 @@ namespace AdventOfCodeDay3
                     smallestSteps = totSteps1 + totSteps2;
             }
 
-            Console.WriteLine("The fewest combined stemps are = " + smallestSteps + " steps.");
+            Console.WriteLine("The fewest combined steps are = " + smallestSteps + " steps.");
 
                 Console.ReadKey();
 
